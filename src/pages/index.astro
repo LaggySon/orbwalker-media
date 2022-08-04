@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<main class='centerContents'>
+		<div class="logoContainer centerContents">
+			<img class='logo' src="/assets/orbwalkerfinal.png" alt="orbwalker logo">
+			<h1 class='headTitle'>Grassroots esports and media solutions</h1>
+		</div>
+		<div class="videoContainer centerContents">
+			<iframe src="https://www.youtube.com/embed/2DcDTVFmj5Y" title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowfullscreen />
+		</div>
+
+		<div class="cards centerContents">
+			<Card href='#' title='Remote'>For cost, safety, or convenience, we can get your event online for viewing
+				across
+				the globe.</Card>
+			<Card href='#' title='In Person'>Whether you have a theatre, a LAN center, a bar, or a stadium, we'll find a
+				solution for your venue.</Card>
+			<Card href='#' title='Mixed'>Not quite remote, not quite in person? No problem. We'll connect staff and
+				transition seamlessly.</Card>
+			<Card href='#' title='Affordable'>We believe in fair, transparent pricing. We'll only advocate for what you
+				need
+				and won't surprise you with expensive features you don't want.</Card>
+			<Card href='#' title='Flexible'>We're experienced integrating different teams and equipment including
+				facility
+				staff or volunteers looking for valuable experience.</Card>
+			<Card href='#' title='Fun'>Events are entertainment first and foremost, and we never forget that.</Card>
+		</div>
+
+
+	</main>
+</Layout>
+
+<style lang='scss'>
+	main {
+		flex-direction: column;
+	}
+
+
+	.logoContainer {
+		flex-direction: column;
+
+		h1.headTitle {
+			text-align: center;
+			font-weight: 400;
+			font-size: min(4vw, 2rem);
+			text-transform: uppercase;
+		}
+
+		.logo {
+			width: 80%;
+			max-height: 8rem;
+		}
+	}
+
+	.videoContainer {
+		width: 80%;
+
+		iframe {
+			// width: 100%;
+			// height: min(30vw, 25rem);
+			min-height: 30vw;
+			max-height: 30rem;
+			aspect-ratio: 16 / 9;
+			margin-inline: 0;
+		}
+
+		margin-block: 2.5rem;
+
+	}
+
+
+	.cards {
+
+		flex-direction: row;
+		flex-wrap: wrap;
+		flex-basis: 10rem;
+		flex-shrink: 1;
+	}
+</style>
