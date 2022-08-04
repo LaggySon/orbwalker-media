@@ -1,12 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Logo from "../assets/orbwalkerfinal.png";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Orbwalker">
 	<main class='centerContents'>
 		<div class="logoContainer centerContents">
-			<img class='logo' src="/assets/orbwalkerfinal.png" alt="orbwalker logo">
+			<img class='logo' src={Logo} alt="orbwalker logo">
 			<h1 class='headTitle'>Grassroots esports and media solutions</h1>
 		</div>
 		<div class="videoContainer centerContents">
