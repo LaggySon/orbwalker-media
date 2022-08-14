@@ -17,10 +17,6 @@ const { href, title, body } = Astro.props;
 
 </li>
 <style>
-	:root {
-		--link-gradient: linear-gradient(141deg, rgba(149, 158, 162, 0.8981793400954132) 0%, rgba(128, 191, 218, 0.9037815809917717) 25%, rgba(149, 158, 162, 0.9037815809917717) 50%, rgba(128, 191, 218, 1) 75%, rgba(149, 158, 162, 0.9) 100%);
-	}
-
 	.link-card {
 		list-style: none;
 		display: flex;
@@ -28,13 +24,13 @@ const { href, title, body } = Astro.props;
 		flex-shrink: 1;
 		padding: 1rem;
 		margin: 1rem;
-		background-image: var(--link-gradient);
+		background-image: var(--gradient);
 		background-size: 400%;
-		border-radius: 0.5rem;
+		border-radius: var(--radius);
 		background-position: 100%;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		flex-basis: 30rem;
-		-webkit-box-shadow: 5px 5px 10px -3px #000000;
-		box-shadow: 5px 5px 10px -3px #000000;
+		/* -webkit-box-shadow: 5px 5px 10px -3px #000000;
+		box-shadow: 5px 5px 10px -3px #000000; */
 	}
 </style>

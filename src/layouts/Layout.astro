@@ -35,9 +35,13 @@ const { title } = Astro.props as Props;
 
 	:root {
 		font-family: 'Kanit', sans-serif;
-		background: rgb(117, 123, 126);
-		background: linear-gradient(141deg, rgba(117, 123, 126, 0.8981793400954132) 0%, rgba(55, 148, 190, 1) 25%, rgba(117, 123, 126, 1) 40%, rgba(117, 123, 126, 1) 60%, rgba(55, 148, 190, 1) 75%, rgba(117, 123, 126, 1) 100%);
+		--radius: 0.2rem;
+		--gradient: linear-gradient(141deg, rgba(149, 158, 162, 0.8981793400954132) 0%, rgba(128, 191, 218, 0.9037815809917717) 25%, rgba(149, 158, 162, 0.9037815809917717) 50%, rgba(128, 191, 218, 1) 75%, rgba(149, 158, 162, 0.9) 100%);
+		;
+	}
 
+	body {
+		margin: 0;
 	}
 
 	.centerContents {
