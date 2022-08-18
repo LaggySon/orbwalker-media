@@ -5,106 +5,130 @@ import Logo from "../assets/orbwalkerfinal.png";
 ---
 
 <Layout title="Orbwalker">
-	<main class='centerContents'>
-		<div class="header centerContents">
-			<img class='logo' src={Logo} alt="orbwalker logo">
-			<h1 class='headTitle'>Grassroots esports and media solutions</h1>
+	<main class="centerContents">
+		<div class="hero centerContents">
+			<img class="logo" src={Logo} alt="orbwalker logo" />
+			<h1 class="headTitle">Grassroots esports and media solutions</h1>
 			<div class="info centerContents">
-				<span>support@orbwalker.com</span> <span>@OrbwalkerMedia</span> <span>juke#2188</span>
+				<span>support@orbwalker.com</span>
+				<span>@OrbwalkerMedia</span>
+				<span>juke#2188</span>
+			</div>
+			<div class="buttons centerContents">
+				<a class="scroller" href="#reel">Video</a>
+				<a class="scroller" href="#about-us">About Us</a>
 			</div>
 		</div>
 
-
-
-		<div class="videoContainer centerContents">
-			<iframe src="https://www.youtube.com/embed/2DcDTVFmj5Y" title="YouTube video player" frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen />
+		<div id="reel"></div>
+		<div class="video-wrap">
+			<div class="video-container">
+				<iframe
+					src="https://www.youtube.com/embed/2DcDTVFmj5Y"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</div>
 		</div>
 
-		<div class="cards centerContents">
-			<Card href='#' title='Remote'>For cost, safety, or convenience, we can get your event online for viewing
-				across
-				the globe.</Card>
-			<Card href='#' title='In Person'>Whether you have a theatre, a LAN center, a bar, or a stadium, we'll find a
-				solution for your venue.</Card>
-			<Card href='#' title='Mixed'>Not quite remote, not quite in person? No problem. We'll connect staff and
-				transition seamlessly.</Card>
-			<Card href='#' title='Affordable'>We believe in fair, transparent pricing. We'll only advocate for what you
-				need
-				and won't surprise you with expensive features you don't want.</Card>
-			<Card href='#' title='Flexible'>We're experienced integrating different teams and equipment including
-				facility
-				staff or volunteers looking for valuable experience.</Card>
-			<Card href='#' title='Fun'>Events are entertainment first and foremost, and we never forget that.</Card>
+		<div class="cards centerContents" id="about-us">
+			<Card href="#" title="Remote"
+				>For cost, safety, or convenience, we can get your event online
+				for viewing across the globe.
+			</Card>
+			<Card href="#" title="In Person"
+				>Whether you have a theatre, a LAN center, a bar, or a stadium,
+				we'll find a solution for your venue.
+			</Card>
+			<Card href="#" title="Mixed"
+				>Not quite remote, not quite in person? No problem. We'll
+				connect staff and transition seamlessly.
+			</Card>
+			<Card href="#" title="Affordable"
+				>We believe in fair, transparent pricing. We'll only advocate
+				for what you need and won't surprise you with expensive features
+				you don't want.
+			</Card>
+			<Card href="#" title="Flexible"
+				>We're experienced integrating different teams and equipment
+				including facility staff or volunteers looking for valuable
+				experience.
+			</Card>
+			<Card href="#" title="Fun"
+				>Events are entertainment first and foremost, and we never
+				forget that.
+			</Card>
 		</div>
-
-
 	</main>
 </Layout>
 
-<style lang='scss'>
+<style lang="scss">
 	main {
 		flex-direction: column;
 	}
 
-
-	.header {
+	.hero {
 		margin-block: 0;
-
 		background-image: var(--gradient);
-		padding: 1rem;
 		flex-direction: column;
-
 		height: 100vh;
-
 		width: 100%;
+		& > * {
+			margin-block: 5rem;
+		}
 
 		h1.headTitle {
+			margin-top: 0;
+			margin-bottom: 0;
 			text-align: center;
 			font-weight: 400;
 			font-size: min(4vw, 2rem);
 			text-transform: uppercase;
 		}
-
+		.scroller {
+			border: 2px solid black;
+			padding: 1rem;
+			margin-inline: 1rem;
+			text-decoration: none;
+			color: black;
+		}
 		.logo {
 			max-height: 8rem;
 			max-width: 90%;
 		}
+		.info {
+			flex-wrap: wrap;
+			margin: 0;
+			span {
+				margin: 0;
+				padding: 0.2rem;
+			}
+		}
 	}
 
-	.videoContainer {
-		width: 90%;
-
-
-		iframe {
-			// flex-shrink: 1;
-			// width: 100%;
-			// height: min(30vw, 25rem);
-			// min-height: 25vh;
-			// max-height: 50vh;
-			aspect-ratio: 16 / 9;
-			margin-inline: 0;
-
-			-webkit-box-shadow: 5px 5px 10px -3px #000000;
-			box-shadow: 5px 5px 10px -3px #000000;
+	.video-container {
+		position: relative;
+		overflow: hidden;
+		height: 0;
+		padding-bottom: 56.25%; /* creates a 16:9 aspect ratio */
+		iframe,
+		embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			max-width: 100%;
 		}
-
-		margin-block: 2.5rem;
-
 	}
-
-	.info {
-		flex-wrap: wrap;
-
-		span {
-			margin: 0.1rem;
-			padding: 0.5rem;
-		}
+	.video-wrap {
+		margin: 1rem;
+		width: 100%;
+		max-width: 1000px;
 	}
 
 	.cards {
-
 		flex-direction: row;
 		flex-wrap: wrap;
 		flex-basis: 10rem;
